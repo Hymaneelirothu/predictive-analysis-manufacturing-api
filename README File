@@ -1,1 +1,35 @@
+# Manufacturing Predictive Analysis API
 
+## Description
+This API predicts machine downtime or production defects using manufacturing data. It provides endpoints to upload data, train a model, and make predictions.
+
+## Requirements
+- Python 3.9+
+- Install dependencies with:
+pip install -r requirements.txt
+
+## How to Run
+1. Start the server:
+python app.py
+2. Test the API using `curl` or Postman.
+
+## Endpoints
+- **Upload Data**: POST `/upload`
+- **Train Model**: POST `/train`
+- **Predict**: POST `/predict`
+
+## Sample Input/Output
+- **Predict Example**:
+Request:
+```json
+{
+ "Air temperature [K]": 300,
+ "Process temperature [K]": 310,
+ "Rotational speed [rpm]": 1500,
+ "Torque [Nm]": 40,
+ "Tool wear [min]": 100
+}
+{
+  "Machine Failure": "No",
+  "Confidence": 0.79
+}
